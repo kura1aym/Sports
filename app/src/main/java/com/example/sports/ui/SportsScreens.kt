@@ -28,6 +28,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.calculateEndPadding
 import androidx.compose.foundation.layout.calculateStartPadding
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
@@ -306,7 +307,11 @@ private fun SportsDetail(
                 )
         ) {
             Box {
-                Box {
+                Box (
+                    modifier = Modifier
+                        .height(300.dp)
+                        .background(MaterialTheme.colorScheme.primary)
+                ){
                     Image(
                         painter = painterResource(selectedSport.sportsImageBanner),
                         contentDescription = null,
