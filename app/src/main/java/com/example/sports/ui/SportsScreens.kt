@@ -72,10 +72,7 @@ import com.example.sports.data.LocalSportsDataProvider
 import com.example.sports.model.Sport
 import com.example.sports.ui.theme.SportsTheme
 
-/**
- * Main composable that serves as container
- * which displays content according to [uiState] and [windowSize]
- */
+
 @Composable
 fun SportsApp(
     windowSize: WindowWidthSizeClass,
@@ -254,7 +251,7 @@ private fun SportsList(
     LazyColumn(
         contentPadding = contentPadding,
         verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium)),
-        modifier = modifier,
+        modifier = modifier.padding(top = dimensionResource(R.dimen.padding_medium)),
     ) {
         items(sports, key = { sport -> sport.id }) { sport ->
             SportsListItem(
@@ -264,6 +261,7 @@ private fun SportsList(
         }
     }
 }
+
 
 @Composable
 private fun SportsDetail(
